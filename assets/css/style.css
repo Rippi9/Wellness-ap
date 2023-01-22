@@ -1,1 +1,14 @@
 
+/* css check */
+body { 
+    background-color: lightgray;
+}
+.BGtest{
+    background-color: aquamarine;
+    border-radius: 1em;
+    margin: 5px;
+    color: #7a7a7a;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+}
