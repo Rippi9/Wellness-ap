@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Wellness AP</title>
+</head>
+
+<body>
+    <div>
+        <!-- Navbar at top start -->
+        <div class="tabs is-toggle is-fullwidth">
+            <ul>
+            <li>
+                <a>
+                <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                <span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span>
+                <span>Fitness</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                <span class="icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span>
+                <span>Nurtition</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                <span>Spare</span>
+                </a>
+            </li>
+            </ul>
+        </div>
+        <!-- Navbar at top end -->
+        <!-- Exercise selection start -->
+        <table class="table is-bordered">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Muscle Group</th>
+                    <th>Difficulty</th>
+                    <th>Excercise</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <td>
+                    <div class = "dropdown">
+                        <div class = "dropdown-trigger">
+                            <button class = "button" aria-haspopup = "true" aria-controls = "dropdown-menu">
+                                <span>Day</span>
+                                <span class = "icon is-small">
+                                    <i class = "fa fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class = "dropdown-menu" id = "dropdown-menu" role = "menu">
+                            <div class = "dropdown-content">
+                                <a href = "#" class = "dropdown-item">Monday</a>
+                                <a href = "#" class = "dropdown-item">Tuesday</a>
+                                <a href = "#" class = "dropdown-item">Wednesday</a>
+                                <a href = "#" class = "dropdown-item">Thursday</a>
+                                <a href = "#" class = "dropdown-item">Friday</a>
+                                <a href = "#" class = "dropdown-item">Saturday</a>
+                                <a href = "#" class = "dropdown-item">Sunday</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class = "dropdown">
+                        <div class = "dropdown-trigger">
+                        <button class = "button" aria-haspopup = "true" aria-controls = "dropdown-menu">
+                            <span>Muscle Group</span>
+                            <span class = "icon is-small">
+                                <i class = "fa fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                        </div>
+                        <div class = "dropdown-menu" id = "dropdown-menu" role = "menu">
+                        <div class = "dropdown-content">
+                            <a href = "#" class = "dropdown-item">abdominals</a>
+                            <a href = "#" class = "dropdown-item">abductors</a>
+                            <a href = "#" class = "dropdown-item">biceps</a>
+                            <a href = "#" class = "dropdown-item">calves</a>
+                            <a href = "#" class = "dropdown-item">chest</a>
+                            <a href = "#" class = "dropdown-item">forearms</a>
+                            <a href = "#" class = "dropdown-item">glutes</a>
+                            <a href = "#" class = "dropdown-item">hamstrings</a>
+                            <a href = "#" class = "dropdown-item">lower back</a>
+                            <a href = "#" class = "dropdown-item">middle back</a>
+                            <a href = "#" class = "dropdown-item">neck</a>
+                            <a href = "#" class = "dropdown-item">quadriceps</a>
+                            <a href = "#" class = "dropdown-item">traps</a>
+                            <a href = "#" class = "dropdown-item">triceps</a>
+                        </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class = "dropdown">
+                        <div class = "dropdown-trigger">
+                        <button class = "button" aria-haspopup = "true" aria-controls = "dropdown-menu">
+                            <span>Difficulty</span>
+                            <span class = "icon is-small">
+                                <i class = "fa fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                        </div>
+                        <div class = "dropdown-menu" id = "dropdown-menu" role = "menu">
+                        <div class = "dropdown-content">
+                            <a href = "#" class = "dropdown-item">Beginner</a>
+                            <a href = "#" class = "dropdown-item">intermediate</a>
+                            <a href = "#" class = "dropdown-item">expert</a>
+                        </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class = "dropdown">
+                        <div class = "dropdown-trigger">
+                        <button class = "button" aria-haspopup = "true" aria-controls = "dropdown-menu">
+                            <span>Exercise</span>
+                            <span class = "icon is-small">
+                                <i class = "fa fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                        </div>
+                        <div class = "dropdown-menu" id = "dropdown-menu" role = "menu">
+                        <div class = "dropdown-content"> 
+                            <!-- append exercises based on 2 previous choices -->
+                        </div>
+                        </div>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+        <!-- Exercise selection end -->
+        <!-- Exercise recorded exercise start -->
+        <table class="table is-bordered">
+            <thead>
+                <tr>
+                    <th>Monday</th>
+                    <td>Muscle Group</td>
+                    <td>Difficulty</td>
+                    <td>Excercise</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>hamstrings</td>
+                    <td>Benginner</td>
+                    <td>this is an example</td>
+                </tr>
+                <tr>
+                    <th>Tuesday</th>
+                    <td>Muscle Group</td>
+                    <td>Difficulty</td>
+                    <td>Excercise</td>
+                </tr>
+                <tr>
+                    <th>Wednesday</th>
+                    <td>Muscle Group</td>
+                    <td>Difficulty</td>
+                    <td>Excercise</td>
+                </tr>
+                <tr>
+                    <th>Thursday</th>
+                    <td>Muscle Group</td>
+                    <td>Difficulty</td>
+                    <td>Excercise</td>
+                </tr>
+                <tr>
+                    <th>Friday</th>
+                    <td>Muscle Group</td>
+                    <td>Difficulty</td>
+                    <td>Excercise</td>
+                </tr>
+                <tr>
+                    <th>Saturday</th>
+                    <td>Muscle Group</td>
+                    <td>Difficulty</td>
+                    <td>Excercise</td>
+                </tr>
+                <tr>
+                    <th>Sunday</th>
+                    <td>Muscle Group</td>
+                    <td>Difficulty</td>
+                    <td>Excercise</td>
+                </tr>
+            </thead>
+
+        </table>
+        <!-- Exercise recorded exercise end -->
+    </div>
+    ||Nurtition secton
+    <div class="columns">
+        <!-- what in my fridge start-->
+        <div class="column">
+          <p class="bd-notification is-info">what in my fridge?</p>
+          <div class="columns is-mobile">
+            <div class="column is-four-fifths">
+                <input class="input" type="text" placeholder="Text input">
+            </div>
+            <div class="column">
+                <button class="button">add</button>
+            </div>
+          </div>
+        </div>
+    </div> 
+
+    <div class = "columns">
+        <div class="column is-one-third BGtest">
+            <ul>
+                <li>
+                    chicken
+                </li>
+                <li>
+                    celery
+                </li>
+            </ul>
+          </div>
+          <div class="column BGtest">
+            things you can try cooking
+          </div>
+    </div>
+<script src="./assets/js/script.js"></script>
+</body>
+
+</html>
+
+
+
+
 
