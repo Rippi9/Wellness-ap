@@ -55,3 +55,7 @@ muscleSelect.addEventListener("change", exerciseInputs);
 
 var difficultySelect = document.getElementById("difficulty-list");
 difficultySelect.addEventListener("change", exerciseInputs);
+
+
+var test = document.getElementById("monday-mg");
+test.innerHTML = "sdfsdf";
