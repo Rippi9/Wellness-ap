@@ -1,8 +1,12 @@
-
+*{
+padding: 0;
+margin: 0;
+}
 /* css check */
 body { 
     background-color: lightgray;
 }
+
 .BGtest{
     background-color: aquamarine;
     border-radius: 1em;
@@ -11,4 +15,60 @@ body {
     font-weight: 600;
     position: relative;
     text-align: center;
+}
+
+.page {
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.flexContainerCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.full{
+    height: 100vh;
+    width: 100%;
+}
+
+.split {
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Control the left side */
+#left {
+    left: 0;
+    /* background-image: url(/assets/image/pexels-photo-4720236.jpeg); */
+    background-color: orange;
+    text-align: right;
+    color: aqua;
+    padding: 0;
+  }
+  
+  /* Control the right side */
+#right {
+    right: 0;
+    /* background-image: url(/assets/image/pexels-photo-4720236.jpeg); */
+    background-color: black;
+    text-align: left;
+    color: aqua;
+    padding: 0;
+}
+
+.imgFill{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.textCenter{
+    position: relative;
+    text-align: center;
+    color: white;
 }
