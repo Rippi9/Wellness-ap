@@ -29,7 +29,6 @@ var exerciseInputs = function () {
   var selectedMuscleValue = document.getElementById("muscle-list").value;
   var selectedDifficultyValue = document.getElementById("difficulty-list").value;
   
- 
 if (selectedMuscleValue !== "" && selectedDifficultyValue !== "") {
   fetch('https://api.api-ninjas.com/v1/exercises?muscle=' + selectedMuscleValue + '&difficulty=' + selectedDifficultyValue, {
     headers: {'X-Api-Key': 'MVnVdWDFItY57sxyJSm1VQ==jiHDRhYRgkayxHmw'}
@@ -57,5 +56,3 @@ var difficultySelect = document.getElementById("difficulty-list");
 difficultySelect.addEventListener("change", exerciseInputs);
 
 
-var test = document.getElementById("monday-mg");
-test.innerHTML = "sdfsdf";
