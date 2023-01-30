@@ -142,6 +142,10 @@ if (selectedMuscleValue !== "" && selectedDifficultyValue !== "") {
       var exerciseOption = document.createElement("option");
       exerciseOption.innerHTML = exercise.name;
       exerciseList.appendChild(exerciseOption);
+      
+      instructions = exercise.instructions;
+      console.log(instructions);
+      
     });
   })
   .catch(error => {
