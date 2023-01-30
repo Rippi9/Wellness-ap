@@ -48,7 +48,7 @@ addButton.addEventListener('click',addFridgeItems);
   function displayItems(){
     
     //clear current items on the page
-    ingredientListEl.innerHTML = '';
+    ingredientListEl.empty();
     //get items from local storage
     var items = readItemsFromStorage();
     console.log('displayItems');
