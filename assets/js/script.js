@@ -125,11 +125,6 @@ function handleItemsFormSubmit(event) {
 
 //Exercise API functionality
 //Console log selected day
-function selectedDay () {
-  var selectedDayValue = document.getElementById("day-list").value;
-  console.log(selectedDayValue);
-}
-
 var exerciseInputs = function () {
   var selectedMuscleValue = document.getElementById("muscle-list").value;
   var selectedDifficultyValue = document.getElementById("difficulty-list").value;
@@ -161,10 +156,6 @@ var difficultySelect = document.getElementById("difficulty-list");
 difficultySelect.addEventListener("change", exerciseInputs);
 
 
-var test = document.getElementById("monday-mg");
-test.innerHTML = "sdfsdf";
-
- 
 
 
 ingredientListEl.on('submit', handleItemsFormSubmit);
@@ -172,5 +163,12 @@ ingredientListEl.on('submit', handleItemsFormSubmit);
 ingredientListEl.on('click', '.btn-delete-project', deleteItems);
 
 displayItems();
+
+const buttontest = document.querySelector("#buttontest");
+  buttontest.addEventListener("click", function() {
+    console.log("Button was clicked!");
+  });
+
+
 
 
