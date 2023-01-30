@@ -168,11 +168,7 @@ document.getElementById("clicktosaveme").addEventListener("click", function(){
 
   var selectedDayValue = document.getElementById("day-list").value;
 
-  var selectedDifficultyValue = document.getElementById("difficulty-list").value;
-  var selectedDifficulty = ("difficulty-list").value; 
-
-  var calendarMuscle = document.getElementById(`${selectedDayValue}-reps`);
-  calendarMuscle.innerHTML = selectedDifficultyValue;
+  
   console.log(selectedExercise);
 
 
