@@ -50,12 +50,44 @@ if (selectedMuscleValue !== "" && selectedDifficultyValue !== "") {
   });
 }};
 
-var muscleSelect = document.getElementById("muscle-list");
-muscleSelect.addEventListener("change", exerciseInputs);
+document.getElementById("buttontest").addEventListener("click", function(){
 
-var difficultySelect = document.getElementById("difficulty-list");
-difficultySelect.addEventListener("change", exerciseInputs);
+  var selectedDayValue = document.getElementById("day-list").value;
+  
+  var selectedMuscleValue = document.getElementById("muscle-list").value;
+  var selectedExercise = ("exercise-list").value;
+
+  var calendarMuscle = document.getElementById(`${selectedDayValue}-mg`);
+  calendarMuscle.innerHTML = selectedMuscleValue;
+  console.log(selectedExercise);
 
 
-var test = document.getElementById("monday-mg");
-test.innerHTML = "sdfsdf";
+
+  var selectedDayValue = document.getElementById("day-list").value;
+
+  var selectedDifficultyValue = document.getElementById("difficulty-list").value;
+  var selectedDifficulty = ("difficulty-list").value; 
+
+  var calendarMuscle = document.getElementById(`${selectedDayValue}-reps`);
+  calendarMuscle.innerHTML = selectedDifficultyValue;
+  console.log(selectedExercise);
+
+
+
+  var selectedDayValue = document.getElementById("day-list").value;
+
+  var selectedExerciseValue = document.getElementById("exercise-list").value;
+  var selectedExercise = ("exercise-list").value;
+
+  var calendarMuscle = document.getElementById(`${selectedDayValue}-exercise`);
+  calendarMuscle.innerHTML = selectedExerciseValue;
+  console.log(selectedExercise);
+
+
+});
+
+
+
+
+
+
