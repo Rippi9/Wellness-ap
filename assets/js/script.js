@@ -48,9 +48,10 @@ addButton.addEventListener('click',addFridgeItems);
   function displayItems(){
     
     //clear current items on the page
-    itemsDisplayEl.clear;
+    ingredientListEl.innerHTML = '';
     //get items from local storage
     var items = readItemsFromStorage();
+    console.log('displayItems');
 
     //loop through itens and create a row for each item
 
@@ -63,15 +64,14 @@ addButton.addEventListener('click',addFridgeItems);
 
       //create a button for each element created so that we can delete each element
       var deleteEl = $(
-        '<td><button class="btn btn-sm btn-delete-project" data-index="' +
+        '<td><button class="colomn" data-index="' +
           i +
           '">X</button></td>'
-            //this.addEventListener('click',localStorage.removeItem(item))
+          
       );
-      //deleteEl.dele
-    
-        //localStorage.removeItem(item);
-    
+      
+     
+      //deleteEl.addEventListener('click',console.log("delete pressed"));
 
         //append elements to DOM to display them
         rowEl.append(nameEl, deleteEl);
