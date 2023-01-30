@@ -149,7 +149,7 @@ if (selectedMuscleValue !== "" && selectedDifficultyValue !== "") {
   });
 }};
 
-document.getElementById("buttontest").addEventListener("click", function(){
+document.getElementById("clicktosaveme").addEventListener("click", function(){
 
   var selectedDayValue = document.getElementById("day-list").value;
   
