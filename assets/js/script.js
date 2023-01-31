@@ -14,6 +14,7 @@ function addFridgeItems(){
   displayItems();
   itemsDisplayEl.val('');
 }
+
 addButton.addEventListener('click',addFridgeItems);
 
 //clears all items on the ingredients list and local storage
@@ -90,7 +91,6 @@ function handleItemsFormSubmit(event) {
 }
 
 //Exercise API functionality
-//Console log selected day
 var exerciseInputs = function () {
   var selectedMuscleValue = document.getElementById("muscle-list").value;
   var selectedDifficultyValue = document.getElementById("difficulty-list").value;
@@ -108,6 +108,10 @@ if (selectedMuscleValue !== "" && selectedDifficultyValue !== "") {
       var exerciseOption = document.createElement("option");
       exerciseOption.innerHTML = exercise.name;
       exerciseList.appendChild(exerciseOption);
+      
+      instructions = exercise.instructions;
+      console.log(instructions);
+      
     });
   })
   .catch(error => {
@@ -115,53 +119,210 @@ if (selectedMuscleValue !== "" && selectedDifficultyValue !== "") {
   });
 }};
 
+var day;
+
+
 document.getElementById("clicktosaveme").addEventListener("click", function(){
-
-  var selectedDayValue = document.getElementById("day-list").value;
+var selectedExerciseValue = document.getElementById("exercise-list").value;
+var selectedMuscleValue = document.getElementById("muscle-list").value;
+  if(selectedExerciseValue == 2 || selectedMuscleValue == 1){
+    console.log(selectedExerciseValue);
+  }else{
+    var selectedDayValue = day;
+    var addTR = document.createElement("tr")
+    var addTdEmpty = document.createElement('td');
+    var addTdMuscle = document.createElement('td');
+    var addTdExercise = document.createElement('td');
+    var dayTable = document.getElementById(`${selectedDayValue}Table`)
+    dayTable.appendChild(addTR);
+    addTR.appendChild(addTdEmpty);
   
-  var selectedMuscleValue = document.getElementById("muscle-list").value;
-  var selectedExercise = ("exercise-list").value;
-
-  var calendarMuscle = document.getElementById(`${selectedDayValue}-mg`);
-  calendarMuscle.innerHTML = selectedMuscleValue;
-  console.log(selectedExercise);
-
-
-
-  var selectedDayValue = document.getElementById("day-list").value;
-
-  var selectedDifficultyValue = document.getElementById("difficulty-list").value;
-  var selectedDifficulty = ("difficulty-list").value; 
-
-  var calendarMuscle = document.getElementById(`${selectedDayValue}-reps`);
-  calendarMuscle.innerHTML = selectedDifficultyValue;
-  console.log(selectedExercise);
-
-
-
-  var selectedDayValue = document.getElementById("day-list").value;
-
-  var selectedExerciseValue = document.getElementById("exercise-list").value;
-  var selectedExercise = ("exercise-list").value;
-
-  var calendarMuscle = document.getElementById(`${selectedDayValue}-exercise`);
-  calendarMuscle.innerHTML = selectedExerciseValue;
-  console.log(selectedExercise);
-
+    addTdMuscle.textContent = selectedMuscleValue;
+    addTdMuscle.classList.add("muscle");
+    addTR.appendChild(addTdMuscle);
+  
+    addTdExercise.textContent = selectedExerciseValue;
+    addTdExercise.classList.add("exercise");
+    addTR.appendChild(addTdExercise);
+  }
 
 });
 
+var mondayExercise = document.getElementById("mondayExercise");
+var tuesdayExercise = document.getElementById("tuesdayExercise");
+var wednesdayExercise = document.getElementById("wednesdayExercise");
+var thursdayExercise = document.getElementById("thursdayExercise");
+var fridayExercise = document.getElementById("fridayExercise");
+var saturdayExercise = document.getElementById("saturdayExercise");
+var sundayExercise = document.getElementById("sundayExercise");
+var monday = document.getElementById("monday");
+var tuesday = document.getElementById("tuesday");
+var wednesday = document.getElementById("wednesday");
+var thursday = document.getElementById("thursday");
+var friday = document.getElementById("friday");
+var saturday = document.getElementById("saturday");
+var sunday = document.getElementById("sunday");
 
+function resetTabs(){
+  mondayExercise.style.display = "none";
+  tuesdayExercise.style.display = "none";
+  wednesdayExercise.style.display = "none";
+  thursdayExercise.style.display = "none";
+  fridayExercise.style.display = "none";
+  saturdayExercise.style.display = "none";
+  sundayExercise.style.display = "none";
+  monday.classList.remove("is-active");
+  tuesday.classList.remove("is-active");
+  wednesday.classList.remove("is-active");
+  thursday.classList.remove("is-active");
+  friday.classList.remove("is-active");
+  saturday.classList.remove("is-active");
+  sunday.classList.remove("is-active");
+}
 
+resetTabs()
 
+monday.addEventListener("click", function(){
+  console.log("mondayTab");
+  resetTabs();
+  mondayExercise.style.display = "unset";
+  day = "monday";
+  monday.classList.add("is-active");
+});
 
+tuesday.addEventListener("click", function(){
+  console.log("tuesdayTab");
+  resetTabs();
+  tuesdayExercise.style.display = "unset";
+  day = "tuesday";
+  tuesday.classList.add("is-active");
+});
 
+wednesday.addEventListener("click", function(){
+  console.log("wednesdayTab");
+  resetTabs();
+  wednesdayExercise.style.display = "unset";
+  day = "wednesday";
+  wednesday.classList.add("is-active");
+});
 displayItems();
+thursday.addEventListener("click", function(){
+  console.log("thursdayTab");
+  resetTabs();
+  thursdayExercise.style.display = "unset";
+  day = "thursday";
+  thursday.classList.add("is-active");
+});
 
+friday.addEventListener("click", function(){
+  console.log("fridayTab");
+  resetTabs();
+  fridayExercise.style.display = "unset";
+  day = "friday";
+  friday.classList.add("is-active");
+});
 
 ingredientListEl.on('submit', handleItemsFormSubmit);
 
+ingredientListEl.on('click', '.btn-delete-project', deleteItems);
+
+displayItems();
+
+const buttontest = document.querySelector("#buttontest");
 
 
 
+
+// code to get item from the fridge to generate a recipe option ============================
+
+
+const mealList = document.getElementById("meal");
+const mealDetailsContent = document.querySelector('.meal-details-content');
+const recipeCloseBtn = document.getElementById("recipe-close-btn");
+
+
+document.getElementById("find").addEventListener("click", function(){
+  
+  getMealList();
+})
+//get meal list that matches with the ingredients
+function getMealList() {
+
+  let ingredients = readItemsFromStorage();
+  fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=6cd84474f70041749e500fbd3ece2d45&ingredients=${ingredients.join(',')}&number=2`, {
+  })
+  .then(response => response.json())
+  .then(data => {
+    let html = "";
+    if(data) {
+      data.forEach(meal => {
+        html += `
+            <div class = "meal-item" data-id = "${meal.id}">
+              <div class = "meal-img">
+                  <img src = "${meal.image}"
+                  alt = "food">
+              </div>
+              <div class = "meal-name">
+                  <h3>${meal.title}</h3>
+                  <a href = "#" class = "recipe-btn">Get Recipe</a>
+              </div>
+            </div>
+        `; 
+      });
+      // set the meals to the HTML
+      mealList.innerHTML = html; 
+      mealList.classList.remove('notFound');
+    } else {
+      html = "Sorry, We didn't find any meal!";
+      mealList.innerHTML = html;
+      mealList.classList.add('notFound');
+    }
+  })
+}
+
+//function to get recipe meal
+function getMealRecipe(ingredients, e) {
+  e.preventDefault();
+  if(e.target.classList.contains('recipe-btn')) {
+    let mealItem = e.target.parentElement.parentElement;
+    fetch(`https://api.spoonacular.com/recipes/${mealItem.dataset.id}/analyzedInstructions`, {
+        headers: {
+            "X-RapidAPI-Key": "6cd84474f70041749e500fbd3ece2d45"
+        }
+    })
+    .then(response => response.json())
+    .then(data => mealRecipeModal(data));
+  }
+}
+
+// creating a modal
+function mealRecipeModal(data) {
+  let html = `
+  <h2 class="recipe-title">${data.title}</h2>
+  <div class="recipe-instruct">
+      <h3>Instruction:</h3>
+      <ol>`;
+  data.analyzedInstructions[0].steps.forEach(step => {
+      html += `<li>${step.step}</li>`;
+  });
+  html += `</ol>
+  </div>`;
+  mealDetailsContent.innerHTML = html;
+  mealDetailsContent.parentElement.classList.add('showRecipe');
+}
+saturday.addEventListener("click", function(){
+  console.log("saturdayTab");
+  resetTabs();
+  saturdayExercise.style.display = "unset";
+  day = "saturday";
+  saturday.classList.add("is-active");
+});
+
+sunday.addEventListener("click", function(){
+  console.log("sundayTab");
+  resetTabs();
+  sundayExercise.style.display = "unset";
+  day = "sunday";
+  sunday.classList.add("is-active");
+});
 
