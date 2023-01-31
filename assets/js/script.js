@@ -217,6 +217,94 @@ friday.addEventListener("click", function(){
   friday.classList.add("is-active");
 });
 
+ingredientListEl.on('submit', handleItemsFormSubmit);
+
+ingredientListEl.on('click', '.btn-delete-project', deleteItems);
+
+displayItems();
+
+const buttontest = document.querySelector("#buttontest");
+
+
+
+
+// code to get item from the fridge to generate a recipe option ============================
+
+
+const mealList = document.getElementById("meal");
+const mealDetailsContent = document.querySelector('.meal-details-content');
+const recipeCloseBtn = document.getElementById("recipe-close-btn");
+
+
+document.getElementById("find").addEventListener("click", function(){
+  
+  getMealList();
+})
+//get meal list that matches with the ingredients
+function getMealList() {
+
+  let ingredients = readItemsFromStorage();
+  fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=6cd84474f70041749e500fbd3ece2d45&ingredients=${ingredients.join(',')}&number=2`, {
+  })
+  .then(response => response.json())
+  .then(data => {
+    let html = "";
+    if(data) {
+      data.forEach(meal => {
+        html += `
+            <div class = "meal-item" data-id = "${meal.id}">
+              <div class = "meal-img">
+                  <img src = "${meal.image}"
+                  alt = "food">
+              </div>
+              <div class = "meal-name">
+                  <h3>${meal.title}</h3>
+                  <a href = "#" class = "recipe-btn">Get Recipe</a>
+              </div>
+            </div>
+        `; 
+      });
+      // set the meals to the HTML
+      mealList.innerHTML = html; 
+      mealList.classList.remove('notFound');
+    } else {
+      html = "Sorry, We didn't find any meal!";
+      mealList.innerHTML = html;
+      mealList.classList.add('notFound');
+    }
+  })
+}
+
+//function to get recipe meal
+function getMealRecipe(ingredients, e) {
+  e.preventDefault();
+  if(e.target.classList.contains('recipe-btn')) {
+    let mealItem = e.target.parentElement.parentElement;
+    fetch(`https://api.spoonacular.com/recipes/${mealItem.dataset.id}/analyzedInstructions`, {
+        headers: {
+            "X-RapidAPI-Key": "6cd84474f70041749e500fbd3ece2d45"
+        }
+    })
+    .then(response => response.json())
+    .then(data => mealRecipeModal(data));
+  }
+}
+
+// creating a modal
+function mealRecipeModal(data) {
+  let html = `
+  <h2 class="recipe-title">${data.title}</h2>
+  <div class="recipe-instruct">
+      <h3>Instruction:</h3>
+      <ol>`;
+  data.analyzedInstructions[0].steps.forEach(step => {
+      html += `<li>${step.step}</li>`;
+  });
+  html += `</ol>
+  </div>`;
+  mealDetailsContent.innerHTML = html;
+  mealDetailsContent.parentElement.classList.add('showRecipe');
+}
 saturday.addEventListener("click", function(){
   console.log("saturdayTab");
   resetTabs();
