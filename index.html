@@ -27,7 +27,9 @@
 
     <div class="page" id='fitnessPage'>
         <div class = "columns is-mobile">
-            <h1 class = "title foodBox column has-text-centered">Fitness</h1>
+            <div class="column">
+                <h1 class = "title is-1 foodBox  has-text-centered ">Fitness</h1>
+            </div>
         </div>
         <div>
             <div class="tabs is-centered is-boxed" id="margin">
@@ -227,7 +229,9 @@
 
     <div class="page" id='foodPage'>
         <div class = "columns is-mobile">
-            <h1 class = "title foodBox column has-text-centered">Food</h1>
+            <div class="column">
+                <h1 class = "title is-1 foodBox  has-text-centered ">Food</h1>
+            </div>
         </div>
         <div class="columns is-fullwidth is-mobile">
 
@@ -235,7 +239,7 @@
                 <div class="columns is-mobile">
                     <div class="column is-3 foodBox">
                         <!-- First nested column -->
-                        <p class="bd-notification is-info has-text-centered padding">Add ingredients that you have</p>
+                        <p class="bd-notification is-info has-text-centered padding title is-4">Add ingredients that you have</p>
                         <input type="text" class="input" id="items" placeholder="Add ingredient">
                         <button class="button is-fullwidth padding" id="addButton" type="submit">Add to the
                             List</button>
@@ -243,7 +247,7 @@
 
                     <div class="column foodBox">
                         <!-- Second nested column -->
-                        <p class="has-text-centered is-fullwidth padding">Ingredients List</p>
+                        <p class="has-text-centered is-fullwidth padding title is-3">Ingredients List</p>
                         <ul class=columnStyle id="ingredient-list"></ul>
                         <button id="find" type="button" class="button is-fullwidth padding">find</button>
                         <button id="clearListButton" type="button" class="button is-fullwidth padding">Clear All
@@ -255,7 +259,7 @@
 
                     <div class="column foodBox">
                         <!-- lower column -->
-                        <p class="bd-notification is-info has-text-centered padding">Things you can try cooking</p>
+                        <p class="bd-notification is-info has-text-centered padding title is-4">Things you can try cooking</p>
                         <div class='columnStyle padding' id="meal"></div>
                     </div>
 
