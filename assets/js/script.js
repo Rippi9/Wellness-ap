@@ -318,7 +318,7 @@ document.getElementById("find").addEventListener("click", function () {
 function getMealList() {
 
   let ingredients = readItemsFromStorage();
-  fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=6cd84474f70041749e500fbd3ece2d45&ingredients=${ingredients.join(',')}&number=2`, {
+  fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=f548cec71a484fb6b35ec095d03c4de3&ingredients=${ingredients.join(',')}&number=2`, {
   })
     .then(response => response.json())
     .then(data => {
