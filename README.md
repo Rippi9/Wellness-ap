@@ -1,27 +1,12 @@
+# WELLNESS APP
+
+
 # User Story    
-As someone who is thinking about going to the gym i would like to keep track of my activities and enter a list of my fridge and get given a list of meals i can cook
+As someone who is thinking about going to the gym I would like to keep track of my activities on a weekly basis, and I want to enter a list of my cooking ingredients at home and receive a list of meals I can cook.
 
-# Project Requirements
-
-You and your group will use everything you’ve learned over the past six modules to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
-
-* Use a CSS framework other than Bootstrap.
-
-* Be deployed to GitHub Pages.
-
-* Be interactive (i.e., accept and respond to user input).
-
-* Use at least two [server-side APIs](https://coding-boot-camp.github.io/full-stack/apis/api-resources).
-
-* Does not use alerts, confirms, or prompts (use modals).
-
-* Use client-side storage to store persistent data.
-
-* Be responsive.
-
-* Have a polished UI.
-
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+# Description
+The Wellness App is designed for people who want to keep track of their fitness and food consumption.
+The Wellness App allows users to keep track of exercise activities on a weekly basis. This is achieved by allowing a user to select the day of the week, along with a muscle group and difficulty selector. The user selections are combined to generate a list of possible exercise for the specified muscle group. The user can save multiple numbers of exercises to each day of the weekly calendar. The exercise calendar can be cleared apon user input to clean out the calendar for a new week - alternatively, a user may want to complete the same routine of exercise week on week, which is also made possible.
 
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
