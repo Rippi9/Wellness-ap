@@ -12,10 +12,15 @@ The app also has a food section, which is designed to help users find recipes fo
 
 # Technologies Used
 HTML
+
 CSS
+
 JAVASCRIPT
+
 BULMA
+
 JQUERY
+
 SERVER APIs (https://api-ninjas.com/api/exercises and https://spoonacular.com/food-api)
 
 # Screenshot
