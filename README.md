@@ -26,7 +26,8 @@ SERVER APIs (https://api-ninjas.com/api/exercises and https://spoonacular.com/fo
 # Screenshot
 ![image](https://user-images.githubusercontent.com/118699442/216266440-85518e15-0e52-43af-a2ec-0ec30f0ec4ff.png)
 
-![image](https://user-images.githubusercontent.com/118699442/216266523-27c0e549-8430-45c4-b751-76c110ee07c6.png)
+![image](https://user-images.githubusercontent.com/118699442/216266879-72f34cad-ef5e-4f9b-9272-9567e819bd84.png)
+
 
 
 
