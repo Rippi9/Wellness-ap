@@ -1,38 +1,47 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-/* css check */
 body { 
-    background-color: lightgray;
-}
-
-.BGtest{
-    background-color: aquamarine;
-    border-radius: 1em;
-    margin: 5px;
-    color: #7a7a7a;
-    font-weight: 600;
-    position: relative;
-    text-align: center;
+    background-color: #439A97;
 }
 
 .page {
     font-family: sans-serif;
     min-height: 100vh;
     scroll-behavior: smooth;
+    padding: 1%;
 }
 
-.flexContainerCenter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button{
+    background-color: #CBEDD5;
+}
 
+.columnStyle{
+    background-color: #fff;
+    border-radius: 0.375em;
+    color: #7a7a7a;
+    font-weight: 600;
+    padding: 1.25rem 0;
+    position: relative;
+    text-align: center;
+    min-height: 150px;
+}
+
+.padding{
+    margin: 10px 0 10px 0;
+}
+
+.foodBox{
+    background-color: #62B6B7;
+    padding: 10px;
+    margin: 10px;
+    border: 10px;
+    border-radius: 0.375em;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .full{
     height: 99vh;
-    width: 100%;
 }
 
 .split {
@@ -42,24 +51,10 @@ body {
     padding-top: 20px;
 }
 
-#left {
-    left: 0;
-    text-align: right;
-    color: aqua;
-    padding: 0;
-}
-
-#right {
-    right: 0;
-    text-align: left;
-    color: aqua;
-    padding: 0;
-}
-
 #textCenterLeft{
     position: absolute;
     top: 50%;
-    left: 40%;
+    left: 70%;
     transform: translate(-50%, -50%);
     font-size:5vw;
     filter: none;
@@ -67,7 +62,7 @@ body {
 #textCenterRight{
     position: absolute;
     top: 50%;
-    left: 60%;
+    left: 25%;
     transform: translate(-50%, -50%);
     font-size:5vw;
     filter: none;
@@ -82,7 +77,11 @@ body {
     filter: grayscale(25%) blur(6px);
     transform: scale(1.001);
     transition: filter 1s;
+    padding: 0
 }
 .blur:hover{
     filter: none;
+}
+#margin{
+    margin-bottom: 0;
 }
